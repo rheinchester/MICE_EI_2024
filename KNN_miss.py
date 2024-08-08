@@ -6,7 +6,7 @@ from sklearn.model_selection import KFold
 import numpy as np
 
 
-file_path = 'EI 2020 Data.csv'
+file_path = 'ESSOREI_LV_24.csv'
 data = pd.read_csv(file_path)
 knn_imputer = KNNImputer(n_neighbors=2)
 data_imputed = pd.DataFrame(knn_imputer.fit_transform(data), columns=data.columns)
@@ -20,3 +20,6 @@ data_imputed = pd.DataFrame(knn_imputer.fit_transform(data), columns=data.column
 #     data_imputed.to_csv('EI_MICE_2024_imputed.csv', index=False)
 if file_path == 'EI 2020 Data.csv':
     data_imputed.to_csv('EI 2020 Data_KNN.csv', index=False)
+
+if file_path == 'ESSOREI_LV_24.csv':
+    data_imputed.to_csv('ESSOREI_LV_24_KNN_Imputed.csv', index=False)
